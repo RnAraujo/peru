@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +21,7 @@ Route::get('/', function () {
 
 
 Route::get('/saludo', [StudentController::class, 'saludo']);
-Route::get('/incopi/autor', [StudentController::class, 'autor']);
+Route::post('/incopi/autor', [StudentController::class, 'autor']);
+
+
+Route::resource('/teachers', TeacherController::class);
